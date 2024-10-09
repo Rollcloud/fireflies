@@ -4,28 +4,33 @@ from machine import Pin, PWM
 from time import sleep_ms
 from probability import gauss
 
-# generate a random firefly
-# Based on data about P. carolinus sourced from https://www.nature.com/articles/s41598-024-53671-3/figures/4
-cycles_per_minute = gauss(mu=12, sigma=1)
-number_of_flashes = gauss(mu=6, sigma=1, rounding=1)
-interflash_gap = gauss(mu=0.45, sigma=0.025)
-flash_duration = gauss(mu=0.1, sigma=0.01)
-max_brightness = gauss(mu=63, sigma=16)
+pins = [1, 25]
+fireflies = []
+for pin in pins:
+    # generate a random firefly
+    # Based on data about P. carolinus sourced from https://www.nature.com/articles/s41598-024-53671-3/figures/4
+    cycles_per_minute = gauss(mu=12, sigma=1)
+    number_of_flashes = gauss(mu=6, sigma=1, rounding=1)
+    interflash_gap = gauss(mu=0.45, sigma=0.025)
+    flash_duration = gauss(mu=0.1, sigma=0.01)
+    max_brightness = gauss(mu=63, sigma=16)
 
-# setup hardware
-led = PWM(Pin(1))
-led.freq(1024)
+    # setup hardware
+    led = PWM(Pin(pin))
+    led.freq(1024)
 
-firefly = Firefly(
-    led,
-    cycles_per_minute,
-    number_of_flashes,
-    interflash_gap,
-    flash_duration,
-    max_brightness,
-)
+    firefly = Firefly(
+        led,
+        cycles_per_minute,
+        number_of_flashes,
+        interflash_gap,
+        flash_duration,
+        max_brightness,
+    )
 
-print(str(firefly))
+    fireflies.append(firefly)
+
+    print(str(firefly))
 
 
 def brightness_to_duty_cycle(duty_cycle: int) -> int:
@@ -34,6 +39,7 @@ def brightness_to_duty_cycle(duty_cycle: int) -> int:
 
 
 while True:
-    brightness = firefly.fly()
-    firefly.led.duty_u16(brightness_to_duty_cycle(brightness))
+    for firefly in fireflies:
+        brightness = firefly.fly()
+        firefly.led.duty_u16(brightness_to_duty_cycle(brightness))
     sleep_ms(10)
