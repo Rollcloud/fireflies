@@ -1,10 +1,10 @@
 import random
-
-from math import log10, floor
+from math import floor, log10
 
 
 def round_sig(x, sig=3):
-    """Round to significant figures.
+    """
+    Round to significant figures.
 
     Source: https://stackoverflow.com/a/3413529
     """
@@ -13,7 +13,8 @@ def round_sig(x, sig=3):
 
 # redefine gauss to accept a rounding parameter
 def gauss(mu: float, sigma: float, rounding: int = 3) -> float:
-    """Return a random number from a Gaussian distribution.
+    """
+    Return a random number from a Gaussian distribution.
 
     Args:
         mu: The mean of the distribution.

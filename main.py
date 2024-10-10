@@ -1,7 +1,8 @@
-from firefly import Firefly
-
-from machine import Pin, PWM
 from time import sleep_ms
+
+from machine import PWM, Pin
+
+from firefly import Firefly
 from probability import gauss
 
 pins = [1, 25]

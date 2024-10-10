@@ -1,7 +1,6 @@
-"""A thinly disguised state-machine class for controlling a firefly LED."""
-
-
 class Firefly:
+    """A thinly disguised state-machine class for controlling a firefly LED."""
+
     def __init__(
         self,
         led,
