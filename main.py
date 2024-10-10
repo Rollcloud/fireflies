@@ -13,7 +13,7 @@ for pin in pins:
     cycles_per_minute = gauss(mu=12, sigma=1)
     number_of_flashes = gauss(mu=6, sigma=1, rounding=1)
     interflash_gap = gauss(mu=0.45, sigma=0.025)
-    flash_duration = gauss(mu=0.1, sigma=0.01)
+    flash_duration = gauss(mu=0.15, sigma=0.01)  # increase mean duration for warm-up and cool-down
     max_brightness = gauss(mu=63, sigma=16)
 
     # setup hardware

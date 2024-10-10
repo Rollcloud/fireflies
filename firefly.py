@@ -1,3 +1,6 @@
+import math
+
+
 class Firefly:
     """A thinly disguised state-machine class for controlling a firefly LED."""
 
@@ -20,6 +23,22 @@ class Firefly:
 
         self.t = 0
 
+    def flash(self, t: float) -> int:
+        """
+        Simulate a firefly flash with gradually increasing and decreasing brightness.
+
+        Returns the brightness of the LED at the specified time.
+
+        Inspired by the flash intensity graphs at:
+            https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8773436/figure/biology-11-00058-f001/
+        """
+        # Using a sinusoidal approximation
+        brightness = self.max_brightness * (
+            0.5 * (1 - math.cos(2 * math.pi * t / self.flash_duration))
+        )
+
+        return int(brightness)
+
     def fly(self, delta_t: float = 0.01) -> int:
         """
         Return the brightness of the LED at the current time.
@@ -37,7 +56,7 @@ class Firefly:
             if self.t < i * self.interflash_gap:
                 pass
             elif self.t < i * self.interflash_gap + self.flash_duration:
-                brightness = self.max_brightness
+                brightness = self.flash(self.t - i * self.interflash_gap)
             elif self.t < (i + 1) * self.interflash_gap:
                 pass
             else:
