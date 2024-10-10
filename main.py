@@ -5,7 +5,7 @@ from machine import PWM, Pin
 from firefly import Firefly
 from probability import gauss
 
-pins = [1, 25]
+pins = [1, 5, 9, 22, 28, 25]
 fireflies = []
 for pin in pins:
     # generate a random firefly
