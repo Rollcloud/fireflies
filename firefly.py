@@ -20,9 +20,14 @@ class Firefly:
 
         self.t = 0
 
-    def fly(self):
-        """Return the brightness of the LED at the current time."""
-        self.t += 0.01
+    def fly(self, delta_t: float = 0.01) -> int:
+        """
+        Return the brightness of the LED at the current time.
+
+        Args:
+            delta_t: The time step to advance the simulation by (in seconds).
+        """
+        self.t += delta_t
         if self.t >= self.period:
             self.t = 0
 
