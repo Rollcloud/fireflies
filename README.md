@@ -4,6 +4,10 @@
 
 Realistically simulate fireflies with a Pico and LEDs.
 
+![Flashing LEDs](lights.gif)
+
+_Demonstration showing the built-in Pico LED in green, and four additional SMD LEDs in orange._
+
 ## Hardware Setup
 
 - Pico
