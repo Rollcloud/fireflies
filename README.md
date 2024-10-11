@@ -35,5 +35,6 @@ Confirm LED pins match those attached to hardware LEDs.
 ### Lint
 
 ```sh
+python -m ruff format
 python -m ruff check --fix
 ```
