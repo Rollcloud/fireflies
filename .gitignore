@@ -3,6 +3,7 @@ __pycache__/
 
 # editors
 /.vscode/
+.micropico
 
 # virtual environments
 /.venv/
