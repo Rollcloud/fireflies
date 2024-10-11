@@ -2,11 +2,16 @@
 
 # Fireflies
 
-Realistically simulate fireflies with a Pico and LEDs.
+Use real-world data to simulate fireflies realistically with a Pico and LEDs.
 
-![Flashing LEDs](lights.gif)
+The LEDs simulate individual fireflies using characteristics described in the following papers:
+
+- Martin, O., Nguyen, C., Sarfati, R. et al. Embracing firefly flash pattern variability with data-driven species classification. Sci Rep 14, 3432 (2024). https://doi.org/10.1038/s41598-024-53671-3
+- Goh, K.-S.; Lee, C.-M.; Wang, T.-Y. Species-Specific Flash Patterns Track the Nocturnal Behavior of Sympatric Taiwanese Fireflies. Biology 2022, 11, 58. https://doi.org/10.3390/biology11010058
 
 _Demonstration showing the built-in Pico LED in green, and four additional SMD LEDs in orange._
+
+![Flashing LEDs](lights.gif)
 
 ## Hardware Setup
 
