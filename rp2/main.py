@@ -34,6 +34,11 @@ for pin in pins:
 
 
 def brightness_to_duty_cycle(duty_cycle: int) -> int:
+    """
+    Map the brightness to a duty cycle value to linearise the LED brightness.
+
+    Source: https://electronics.stackexchange.com/a/443689
+    """
     # fmt: off
     ledLookupTable = [
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 
