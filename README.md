@@ -2,7 +2,7 @@
 
 # Fireflies
 
-Use real-world data to simulate fireflies realistically with a Pico and LEDs.
+Data-driven simulation of fireflies using a Pico and LEDs.
 
 The LEDs simulate individual fireflies using characteristics described in the following papers:
 
