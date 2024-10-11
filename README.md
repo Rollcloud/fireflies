@@ -20,9 +20,9 @@ _Demonstration showing the built-in Pico LED in green, and four additional SMD L
 
 ## Software Setup
 
-Install MicroPython on Pico and copy the files in `rp2/` across to the Pico.
+Install MicroPython on the Pico and copy the files in `rp2/` across to the Pico's root directory.
 
-Setup software on the host machine for linting.
+Setup software on the host machine for linting:
 
 ```sh
 python -m venv .venv
