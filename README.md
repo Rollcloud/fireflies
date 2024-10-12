@@ -27,7 +27,7 @@ Setup software on the host machine for linting:
 ```sh
 python -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 ```
 
 Confirm LED pins match those attached to hardware LEDs.
